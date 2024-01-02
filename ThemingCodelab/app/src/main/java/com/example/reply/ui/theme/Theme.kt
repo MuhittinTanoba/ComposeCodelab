@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.example.reply.ui.theme.shapes
 import com.example.reply.ui.theme.typography
 
 
@@ -111,6 +112,7 @@ fun AppTheme(
       MaterialTheme(
         colorScheme = colors,
         content = content,
-          typography = typography
+          typography = typography,
+          shapes = shapes
       )
 }
