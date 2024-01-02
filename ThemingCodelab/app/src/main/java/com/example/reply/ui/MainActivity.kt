@@ -38,15 +38,17 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             val uiState by viewModel.uiState.collectAsState()
-            ReplyApp(
-                replyHomeUIState = uiState,
-                closeDetailScreen = {
-                    viewModel.closeDetailScreen()
-                },
-                navigateToDetail = { emailId ->
-                    viewModel.setSelectedEmail(emailId)
-                }
-            )
+            AppTheme {
+                ReplyApp(
+                    replyHomeUIState = uiState,
+                    closeDetailScreen = {
+                        viewModel.closeDetailScreen()
+                    },
+                    navigateToDetail = { emailId ->
+                        viewModel.setSelectedEmail(emailId)
+                    }
+                )
+            }
         }
     }
 }
@@ -60,10 +62,12 @@ class MainActivity : ComponentActivity() {
     name = "DefaultPreviewLight"
 )
 @Composable
-fun ReplyAppPreviewLight() {
-    ReplyApp(
-        replyHomeUIState = ReplyHomeUIState(
-            emails = LocalEmailsDataProvider.allEmails
+fun ReplyAppPreview() {
+    AppTheme {
+        ReplyApp(
+            replyHomeUIState = ReplyHomeUIState(
+                emails = LocalEmailsDataProvider.allEmails
+            )
         )
-    )
+    }
 }
