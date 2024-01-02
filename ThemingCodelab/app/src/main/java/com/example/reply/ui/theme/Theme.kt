@@ -15,6 +15,7 @@ import androidx.compose.ui.graphics.toArgb
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalView
 import androidx.core.view.WindowCompat
+import com.example.reply.ui.theme.typography
 
 
 private val LightColors = lightColorScheme(
@@ -109,6 +110,7 @@ fun AppTheme(
     }
       MaterialTheme(
         colorScheme = colors,
-        content = content
+        content = content,
+          typography = typography
       )
 }
