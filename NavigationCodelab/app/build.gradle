@@ -80,6 +80,9 @@ android {
 }
 
 dependencies {
+    implementation 'androidx.room:room-compiler:2.6.1'
+    implementation 'org.junit.jupiter:junit-jupiter:5.8.1'
+    implementation 'org.testng:testng:6.9.6'
     def composeBom = platform('androidx.compose:compose-bom:2023.10.01')
     implementation(composeBom)
     androidTestImplementation(composeBom)
@@ -99,6 +102,7 @@ dependencies {
     debugImplementation "androidx.compose.ui:ui-tooling"
 
     // Testing dependencies
+    androidTestImplementation "androidx.navigation:navigation-testing:$rootProject.2.7.7"
     androidTestImplementation "androidx.arch.core:core-testing:2.2.0"
     androidTestImplementation "androidx.test.espresso:espresso-contrib:3.5.1"
     androidTestImplementation "androidx.test.espresso:espresso-core:3.5.1"
